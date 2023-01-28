@@ -8,12 +8,23 @@ export const Home = () => {
   return (
     <Styled.Container>
       <Styled.Content>
-        <AnimatedLottieView autoPlay source={pokemonAnimation} loop />
+        <Styled.WrapperIcon>
+          <Styled.IconContent>
+            <AnimatedLottieView autoPlay source={pokemonAnimation} loop />
+          </Styled.IconContent>
+        </Styled.WrapperIcon>
+
+        <Styled.Title>Pokédex</Styled.Title>
+        <Styled.SubTitle>
+          Encontre todos os pokémons em um só lugar
+        </Styled.SubTitle>
       </Styled.Content>
-      <Styled.Footer>
-        <Styled.Title>Bem vindo</Styled.Title>
-        <Styled.Subtitle>Encontre todos os pokémons</Styled.Subtitle>
-      </Styled.Footer>
+
+      <Styled.Bottom>
+        <Styled.Button onPress={() => {}}>
+          <Styled.ButtonText>Entrar</Styled.ButtonText>
+        </Styled.Button>
+      </Styled.Bottom>
     </Styled.Container>
   );
 };
