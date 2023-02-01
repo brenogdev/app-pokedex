@@ -8,7 +8,7 @@ import { Load } from '../../components/Load';
 import api from '../../services/api';
 
 import * as S from './styles';
-// import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 type PokemonType = {
   type: {
@@ -29,7 +29,7 @@ export interface Request {
 }
 
 export function Home() {
-//   const { navigate } = useNavigation();
+  const { navigate } = useNavigation<NavigationProp<any>>();
 
   const [load, setLoad] = useState<boolean>(true);
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -74,9 +74,9 @@ export function Home() {
   }
 
   function handleNavigationPokemonDetail(pokemonId: number) {
-    // navigate('About', {
-    //   pokemonId,
-    // });
+    navigate('About', {
+      pokemonId,
+    });
   }
   return load ? (
     <S.LoadingScreen>

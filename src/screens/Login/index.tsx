@@ -3,8 +3,12 @@ import AnimatedLottieView from "lottie-react-native";
 
 import pokemonAnimation from "../../../assets/animation-home.json";
 import * as Styled from "./styles";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+
 
 export const Login = () => {
+  const { navigate } = useNavigation<NavigationProp<any>>();
+
   return (
     <Styled.Container>
       <Styled.Content>
@@ -21,7 +25,7 @@ export const Login = () => {
       </Styled.Content>
 
       <Styled.Bottom>
-        <Styled.Button onPress={() => {}}>
+        <Styled.Button onPress={() => navigate("Home")}>
           <Styled.ButtonText>Entrar</Styled.ButtonText>
         </Styled.Button>
       </Styled.Bottom>
